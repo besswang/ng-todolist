@@ -12,12 +12,12 @@
   </style>
 </head>
 <body ng-controller="formCtr">
-<form action="" class="form-inline" role="form">
+<div class="input-group">
   <input ng-model="text" class="form-control" type="text">
   <span class="input-group-btn"> 
     <button type="button" class="btn btn-primary" ng-click="add()">提交</button>
   </span>
-</form>
+</div>
 <h1 ng-if="teams.length>0">增加的条目</h1>
 <ul>
   <li ng-repeat="team in teams track by $index">{{team}}
