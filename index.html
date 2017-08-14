@@ -5,6 +5,11 @@
   <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.css">
   <script type="text/javascript" src="https://cdn.bootcss.com/angular.js/1.6.5/angular.js"></script>
   <script type="text/javascript" src="https://cdn.bootcss.com/angular-ui-router/1.0.3/angular-ui-router.js"></script>
+  <style>
+    .del{
+      float:right;
+    }
+  </style>
 </head>
 <body ng-controller="formCtr">
 <form action="" class="form-inline" role="form">
@@ -14,9 +19,11 @@
   <p>{{text}}</p>
   <button type="button" class="btn btn-primary" ng-click="add()">提交</button>
 </form>
-<h1>增加的条目</h1>
+<h1 ng-if="items.length>0">增加的条目</h1>
 <ul>
-  <li ng-repeat="team in teams">{{team}}</li>
+  <li ng-repeat="team in teams track by $index">{{team}}
+    <a class="del" href="#" ng-click="teams.splick($index,1)">删除</a>
+  </li>
 </ul>
 </body>
 </html>
