@@ -19,10 +19,10 @@
   <p>{{text}}</p>
   <button type="button" class="btn btn-primary" ng-click="add()">提交</button>
 </form>
-<h1 ng-if="items.length>0">增加的条目</h1>
+<h1 ng-if="teams.length>0">增加的条目</h1>
 <ul>
   <li ng-repeat="team in teams track by $index">{{team}}
-    <a class="del" href="#" ng-click="teams.splick($index,1)">删除</a>
+    <a class="del" href="#" ng-click="teams.splice($index,1)">删除</a>
   </li>
 </ul>
 </body>
